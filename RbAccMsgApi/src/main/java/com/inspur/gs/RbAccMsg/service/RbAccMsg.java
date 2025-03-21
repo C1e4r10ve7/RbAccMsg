@@ -382,9 +382,9 @@ public class RbAccMsg implements RbAccmsgApi {
     /**
      * 获取核算组织编号
      */
-    public String getDWBH(HashMap pztMap){
+    public String getDWBH(HashMap pztMap1){
         List sqlResultList = new ArrayList<Map<String, Object>>();
-        String dwid = pztMap.get("DWBH").toString();
+        String dwid = pztMap1.get("DWBH").toString();
         String dwSql = "SELECT code AS \"CODE\" FROM BFACCOUNTINGORGANIZATION WHERE id='" + dwid + "'";
         sqlResultList =
                 entityManager.createNativeQuery(dwSql).unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP).getResultList();
